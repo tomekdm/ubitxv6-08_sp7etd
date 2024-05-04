@@ -18,7 +18,7 @@ By default jog position is set to 0.1 digit. Short press of the knob shifts jog 
 
 3.  CW keying is modified. Discovered that start of CW TX is delayed and cutting out e.g. first dot in "R" letter (.-.) - first dot was not transmitted. Some mods were made and CW TX seems to be smooth now. Couple CW QSOs made with straight key.
 
-4.  Additionally discovered that CW TX frequency was shifted by sidetone +/- depending on USB or LSB was selected. This shift was commented out and CW TX occurs now on displayed/selected frequency.
+4.  Additionally discovered that CW TX frequency was shifted by sidetone +/- depending if USB or LSB was selected. This shift was commented out and CW TX occurs now on displayed/selected frequency.
 
 5.  Some cosmetic and SW stability changes e.g. to display pop ups - some pop up messages where shifted to improve cosmetics. Some stability issues found (original firmware was not working stable with my usb-c type arduino nano). Seems to be OK. now.
 
