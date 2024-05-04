@@ -173,6 +173,9 @@ extern boolean modeCalibrate;//this mode of menus shows extended menus to calibr
                               //beat frequency
 
 /* these are functions implemented in the main file named as ubitx_xxx.ino */
+int jog_export();//03_sp7etd - bridge between *.ino and ubitx_ui.cpp
+int touch_export();//04_sp7etd - bridge between *.ino and ubitx_ui.cpp
+void jogUpdate();//03_sp7etd - bridge between *.ino and ubitx_ui.cpp
 void active_delay(int delay_by);
 void saveVFOs();
 void setFrequency(unsigned long f);

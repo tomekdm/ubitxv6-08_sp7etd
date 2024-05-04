@@ -87,7 +87,7 @@ byte getPaddle(){
  */
 void cwKeydown(){
 
-  keyDown = 1;                  //tracks the CW_KEY
+ // keyDown = 1;                  //tracks the CW_KEY//01_sp7etd keyDown removed as could not find where used
   tone(CW_TONE, (int)sideTone); 
   digitalWrite(CW_KEY, 1);     
 
@@ -101,7 +101,7 @@ void cwKeydown(){
  * Pushes the cwTimeout further into the future
  */
 void cwKeyUp(){
-  keyDown = 0;    //tracks the CW_KEY
+ // keyDown = 0;    //tracks the CW_KEY //01_sp7etd keyDown removed as nowhere used
   noTone(CW_TONE);
   digitalWrite(CW_KEY, 0);    
   
@@ -207,7 +207,7 @@ void cwKeyer(void){
             //DelayTime Option
             active_delay(delayBeforeCWStartTime * 2);
             
-            keyDown = 0;
+           // keyDown = 0; //01_sp7etd keyDown removed as nowhere used
             cwTimeout = millis() + cwDelayTime * 10;  //+ CW_TIMEOUT;
             startTx(TX_CW);
           }
@@ -256,9 +256,9 @@ void cwKeyer(void){
           startTx(TX_CW);
 
           //DelayTime Option
-          active_delay(delayBeforeCWStartTime * 2);
+         // active_delay(delayBeforeCWStartTime * 2);//01_sp7etd remove any TX delay
           
-          keyDown = 0;
+         // keyDown = 0; //01_sp7etd keyDown removed as nowhere used
           cwTimeout = millis() + cwDelayTime * 10;  //+ CW_TIMEOUT; 
         }
         cwKeydown();
@@ -271,7 +271,7 @@ void cwKeyer(void){
       else{
         if (0 < cwTimeout && cwTimeout < millis()){
           cwTimeout = 0;
-          keyDown = 0;
+         // keyDown = 0; //01_sp7etd keyDown removed as nowhere used
           stopTx();
         }
         //if (!cwTimeout) //removed by KD8CEC

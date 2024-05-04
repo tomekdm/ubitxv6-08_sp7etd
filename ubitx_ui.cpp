@@ -104,8 +104,8 @@ void formatFreq(long f, char *buff) {
 }
 
 void drawCommandbar(char *text){
-  displayFillrect(30,45,280, 32, DISPLAY_NAVY);
-  displayRawText(text, 30, 45, DISPLAY_WHITE, DISPLAY_NAVY);
+  displayFillrect(30,53,280, 25, DISPLAY_NAVY);//04_sp7etd 45 into 53; 32 into 25 - cosmetic changes
+  displayRawText(text, 30, 53, DISPLAY_WHITE, DISPLAY_NAVY);//04_sp7etd 45 into 53 - cosmetic changes
 }
 
 /** A generic control to read variable values
@@ -144,7 +144,7 @@ int getValueByKnob(int minimum, int maximum, int step_size,  int initial, char* 
       }
       checkCAT();
     }
-   displayFillrect(30,41,280, 32, DISPLAY_NAVY);
+    displayFillrect(30,53,280, 25, DISPLAY_NAVY);//04_sp7etd 41 into 53, 32 into 25 - cosmetic changes
    return knob_value;
 }
 
@@ -278,7 +278,7 @@ void btnDraw(struct Button *b){
 
 
 void displayRIT(){
-  displayFillrect(0,41,320,30, DISPLAY_NAVY);
+  displayFillrect(0,45,320,26, DISPLAY_NAVY);//04_sp7etd 41 into 45 testing, 30 into 26 - cosmetic changes
   if (ritOn){
     strcpy(c, "TX:");
     formatFreq(ritTxFrequency, c+3);
@@ -309,7 +309,7 @@ void fastTune(){
 
     //exit after debouncing the btnDown
     if (btnDown()){
-      displayFillrect(100, 55, 120, 30, DISPLAY_NAVY);
+      displayFillrect(100, 55, 120, 24, DISPLAY_NAVY);//04_sp7etd 30 for 24 - cosmetic changes
 
       //wait until the button is realsed and then return
       while(btnDown())
@@ -406,15 +406,18 @@ void enterFreq(){
 
 void drawCWStatus(){
   displayFillrect(0, 201, 320, 39, DISPLAY_NAVY);
-  strcpy(b, " cw:");
+  //strcpy(b, " cw:");//04_sp7etd - shortening CW status
+strcpy(b, " ");//04_sp7etd - shortening CW status
   int wpm = 1200/cwSpeed;    
   itoa(wpm,c, 10);
   strcat(b, c);
-  strcat(b, "wpm, ");
+  //strcat(b, "wpm, ");//04_sp7etd - shortening CW status
+  strcat(b, ";");//04_sp7etd - shortening CW status
   itoa(sideTone, c, 10);
   strcat(b, c);
-  strcat(b, "hz");
+ // strcat(b, "hz");//04_sp7etd - shortening CW status
   displayRawText(b, 0, 210, DISPLAY_CYAN, DISPLAY_NAVY);  
+  jogUpdate();//04_sp7etd - update jog/touch/firmware version info when CW status changed
 }
 
 
@@ -424,8 +427,40 @@ void drawTx(){
   else
     displayFillrect(280, 48, 37, 28, DISPLAY_NAVY);
 }
+
 void drawStatusbar(){
   drawCWStatus();
+}
+
+void jogUpdate()//03_sp7etd jogUpdate display function
+{
+int jog;//03_sp7etd  - declaration of local jog integer
+int touch;//04_sp7etd declaration of local touch integer
+jog = jog_export(); //03_sp7etd - importing jog value from *.ino file
+touch = touch_export(); //04_sp7etd  importing touch value from *.ino file
+
+displayFillrect(230, 210, 110 ,TEXT_LINE_HEIGHT+1, DISPLAY_NAVY);
+displayRawText("04_sp7etd", 110, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);//04_sp7etd - displaying version and origin of updated firmware
+ 
+ //03_sp7etd - displays current jog position:
+  switch (jog) {
+  case 0:
+    displayRawText(".01", 277, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);
+    break;
+  case 1:
+    displayRawText(".1", 290, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);
+    break;
+  case 2:
+    displayRawText("1", 297, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);
+    break;
+  case 3:
+    displayRawText("10", 282, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);
+    break;
+  case 4:
+    displayRawText("100", 269, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);
+    break; 
+  }
+if (touch) displayRawText("t", 310, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);//04_sp7etd - displays touch status 
 }
 
 void guiUpdate(){
@@ -457,6 +492,7 @@ void guiUpdate(){
   }
   drawStatusbar();
   checkCAT();  
+  jogUpdate();//03_sp7etd - update also firmware/jog and touch status
 }
 
 
@@ -704,7 +740,7 @@ void setCwTone(){
   //save the setting
   EEPROM.put(CW_SIDETONE, sideTone);
 
-  displayFillrect(30,41,280, 32, DISPLAY_NAVY);
+  displayFillrect(30,53,280, 25, DISPLAY_NAVY);//04_sp7etd 41 into 53/ 32 into 25 - cosmetic changes
   drawStatusbar();
 //  printLine2("");  
 //  updateDisplay();  
@@ -803,7 +839,7 @@ void drawFocus(int ibtn, int color){
 }
 
 void doCommands(){
-  int select=0, i, prevButton, btnState;
+  int select=0, i, prevButton=0, btnState;//01_sp7etd testing -  prevButton=0 against crash, seems like declaring to 0 increases stability
 
   //wait for the button to be raised up
   while(btnDown())
@@ -823,7 +859,7 @@ void doCommands(){
       doCommand(&b);
 
       //unfocus the buttons
-      drawFocus(select, DISPLAY_BLUE);
+      drawFocus(select/10, DISPLAY_DARKGREY);//01_sp7etd - added "/10"; also changed  blue for darkrey (cosmetic) testing - this line was causing crash in my nano
       if (vfoActive == VFO_A)
         drawFocus(0, DISPLAY_WHITE);
       else
@@ -854,7 +890,7 @@ void doCommands(){
       continue;
       
      //we are on a new button
-     drawFocus(prevButton, DISPLAY_BLUE);
+     drawFocus(prevButton, DISPLAY_DARKGREY);
      drawFocus(select/10, DISPLAY_WHITE);
      prevButton = select/10;
   }
