@@ -26,8 +26,8 @@ So, now last line shows: Shortened CW status (no units), version and origin of u
 
 Summarizing, button knob has 5 functions now (depends on pressing time):
 
-1) short press - jog position to the right
-2)  little longer press - jog position to the left Jog position is displayed on the right bottom corner
+1) short press - jog position to the right.
+2)  little longer press - jog position to the left (jog position is displayed on the right bottom corner).
 3)  Knob press up to 5s - do commands as in origin firmware - jump with cursor through the menu.
 4)  Knob press between ~5s and 10s - toggle TFT touch sensing ON/OFF - sometimes SPI noise can be heard - so toggling touch OFF can help in RX.
 5)  Long ~10s press until Setup window appear - as in origin firmware
