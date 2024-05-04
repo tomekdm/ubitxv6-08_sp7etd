@@ -32,8 +32,8 @@ Summarizing, button knob has 5 functions now (depends on pressing time):
 4)  Knob press between ~5s and 10s - toggle TFT touch sensing ON/OFF - sometimes SPI noise can be heard - so toggling touch OFF can help in RX.
 5)  Long ~10s press until Setup window appear - as in origin firmware
 
-Best regards 
-Please do not hesitate to contact with me 
+Best regards
+Please do not hesitate to contact with me
 I will try to answer ASAP, but sometimes it can take some time...
 
 Tomasz 
