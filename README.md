@@ -34,8 +34,8 @@ Summarizing, button knob has 5 functions now (depends on pressing time):
 
 See 04_sp7etd_screenshot.jpeg file for menu overview.
 
-Best regards
-Please do not hesitate to contact with me
+Best regards.
+Please do not hesitate to contact with me.
 I will try to answer ASAP, but sometimes it can take some time...
 
 Tomasz 
