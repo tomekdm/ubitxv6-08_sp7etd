@@ -22,7 +22,7 @@ By default jog position is set to 0.1 digit. Short press of the knob shifts jog 
 
 5.  Some cosmetic and SW stability changes e.g. to display pop ups - some pop up messages where shifted to improve cosmetics. Some stability issues found (original firmware was not working stable with my usb-c type arduino nano). Seems to be OK. now.
 
-So, now last line shows: Shortened CW status (wpm and tone frequency without units), version and origin of updated firmware, jog position and TFT touch status - presence of letter "t" indicates touch sensing ON (absence OFF). Please don't blame me for sp7etd sign. Feel free to enter Your or project creator call sign.
+So, now last line shows: Shortened CW status (wpm and tone frequency without units), version and origin of updated firmware, jog position and TFT touch status - presence of letter "t" indicates touch sensing ON (absence OFF). Please don't blame me for sp7etd sign. Feel free to enter Your or project creator call sign (ubitx_ui.cpp file, line 443).
 
 Summarizing, button knob has 5 functions now (depends on pressing time):
 
