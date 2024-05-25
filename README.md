@@ -36,11 +36,6 @@ See 04_sp7etd_screenshot.jpeg file for menu overview.
 
 Best regards.
 
-Please do not hesitate to contact with me.
-
-I will try to answer ASAP, but sometimes it can take some time...
-
 Tomasz 
 sp7etd 
-tomekdm@interia.pl 
 4th May 2024, Poland
