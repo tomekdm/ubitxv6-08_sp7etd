@@ -1,6 +1,7 @@
 04_sp7etd firmware update manual:
 
 NOTE 1: Firmware originated from v6.3.1 Arduino sketch. For use with original ILI9341 320x240 TFT display.
+
 NOTE 2: Mind to rename unpacked directory eg. "ubitxv6-04_sp7etd-master" to the same name as *.ino file (eg. "ubitx_v6_1_code_04_sp7etd")
 
 Hello, I have bought ubitx v6 couple weeks ago and at beginning I was a little disappointed with CW performance and some functionalities. Decided to adjust it to my needs with default ILI9341 320x240 TFT display and then I have discovered beauty of this open project.
