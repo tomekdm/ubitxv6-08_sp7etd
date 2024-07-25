@@ -4,6 +4,8 @@ NOTE 1: Firmware originated from v6.3.1 Arduino sketch. For use with original IL
 
 NOTE 2: Mind to rename unpacked directory eg. "ubitxv6-04_sp7etd-master" to the same name as *.ino file (eg. "ubitx_v6_1_code_04_sp7etd")
 
+NOTE 3: MIND!!! Just found issue with CW mode when in USB - Rx is shifted +1kHz in relation to TX. No issue with LSB. Please switch to LSB when in CW mode above 10MHz. I will try to fix it in next revision.
+
 Hello, I have bought ubitx v6 couple weeks ago and at beginning I was a little disappointed with CW performance and some functionalities. Decided to adjust it to my needs with default ILI9341 320x240 TFT display and then I have discovered beauty of this open project.
 
 I would like to take this opportunity to thank the creator of this project Ashhar Farhan VU2ESE, as well as all the people thanks to whom this wonderful project lives and becomes better.
