@@ -8,6 +8,8 @@ NOTE 3: MIND!!! Just found issue with CW mode when in USB - Rx is shifted +1kHz 
 
 NOTE 4: There are several clones of Arduino nano. Some of them are not working properly with ubitx v6. Sometimes touch screen is not working, sometimes there are issues with flashing.
 
+NOTE 5: Remember to perform FULL calibration after flashing (Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also Tuch screen calibration, as touch will not work if not calibrated. To enter Setup menu press encoder button until Setup menu will appear (~10s).
+
 Hello, I have bought ubitx v6 couple weeks ago and at beginning I was a little disappointed with CW performance and some functionalities. Decided to adjust it to my needs with default ILI9341 320x240 TFT display and then I have discovered beauty of this open project.
 
 I would like to take this opportunity to thank the creator of this project Ashhar Farhan VU2ESE, as well as all the people thanks to whom this wonderful project lives and becomes better.
