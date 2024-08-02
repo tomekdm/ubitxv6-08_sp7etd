@@ -6,7 +6,7 @@ NOTE 2: Mind to rename unpacked directory eg. "ubitxv6-04_sp7etd-master" to the 
 
 NOTE 3: MIND!!! Just found issue with CW mode when in USB - Rx is shifted +1kHz in relation to TX. No issue with LSB. Please switch to LSB when in CW mode above 10MHz. I will try to fix it in next revision. Check new release 06_sp7etd with this issue fixed.
 
-NOTE 4: Remember to perform FULL calibration after flashing (Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also Touch screen calibration, as touch will not work if not calibrated. To enter Setup menu press encoder button until Setup menu will appear (~10s).
+NOTE 4: Remember to perform FULL calibration after flashing (Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also Touch screen calibration, as touch will not work if not calibrated (especially when fresh nano used). To enter Setup menu press encoder button until Setup menu will appear (~10s).
 
 
 Introduction
