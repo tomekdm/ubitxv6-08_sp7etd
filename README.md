@@ -1,3 +1,5 @@
+Please check my newest release 08_sp7etd.
+
 04_sp7etd firmware update manual:
 
 NOTE 1: Firmware originated from v6.3.1 Arduino sketch. For use with original ILI9341 320x240 TFT display.
