@@ -11,14 +11,16 @@ NOTE 3: Remember to perform FULL calibration after flashing (especially when new
 See 08_sp7etd_screenshot.jpeg file for menu overview.
 
 08_sp7etd release notes:
-Release NOTE 1: S-meter  and s-meter button added ("0v8"). 
+
+Release NOTE 1: 
+S-meter and s-meter button added (s-meter button name is "0v8" - the number of sp7etd firmware release). 
 I have used LM386 circuit from:
 http://www.hamskey.com/2018/05/creating-simple-s-meter-sensor-for-ubitx.html
-Schematic included with this release files. S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8" button which name indicates sp7etd firmware release number. Mind s-meter indications are for reference only. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
+Schematic of s-meter circuit is included with this release. S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8". Mind s-meter indications are for reference only. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
 
 07_sp7etd release notes:
 Release NOTE 1: RX shift when in CW mode and when in USB is fixed now. Whenever in LSB or in USB in CW mode - RX now is on the same frequency as TX.
-Release NOTE 2: "LCK" button added - lock of frequency tuning with encoder to disable encoder tuning (to avoid accidental tuning).
+Release NOTE 2: "LCK" button added - lock of frequency tuning to disable encoder (to avoid accidental tuning).
 
 04_sp7etd release notes (first major sp7etd firmware release):
 Introduction:
