@@ -50,6 +50,8 @@ uint8_t  si5351bx_drive[3] = {3, 3, 3}; // 0=2ma 1=4ma 2=6ma 3=8ma for CLK 0,1,2
 uint8_t  si5351bx_clken = 0xFF;         // Private, all CLK output drivers off
 int32_t calibration = 0;
 
+
+
 void i2cWrite(uint8_t reg, uint8_t val) {   // write reg via i2c
   Wire.beginTransmission(SI5351BX_ADDR);
   Wire.write(reg);

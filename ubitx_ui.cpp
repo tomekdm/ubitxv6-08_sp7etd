@@ -12,6 +12,13 @@
  * quickly cleared up.
  */
 
+
+int lck = 0; //07_sp7etd - new variable for lock of frequency tuning
+int lck_export() {return lck;}//07_sp7etd
+
+int s_meter_on = 0;//08_sp7etd - by default s-meter is OFF
+int s_meter_on_export() {return s_meter_on;}//08_sp7etd - exporting s-meter button position
+
 #define BUTTON_SELECTED 1
 
 struct Button {
@@ -20,7 +27,7 @@ struct Button {
   char *morse;
 };
 
-#define MAX_BUTTONS 17
+#define MAX_BUTTONS 19 //08_sp7etd 18@19 - adding s-meter button
 const struct Button btn_set[MAX_BUTTONS] PROGMEM = { 
 //const struct Button  btn_set [] = {
   {0, 10, 159, 36,  "VFOA", "A"},
@@ -37,12 +44,14 @@ const struct Button btn_set[MAX_BUTTONS] PROGMEM = {
   {128, 120, 60, 36, "30", "3"},
   {192, 120, 60, 36, "20", "2"},
   {256, 120, 60, 36, "17", "7"},
-
+//x,y, 07_sp7etd
   {0, 160, 60, 36, "15", "5"},
   {64, 160, 60, 36, "10", "1"},
   {128, 160, 60, 36, "WPM", "W"},
   {192, 160, 60, 36, "TON", "T"},
   {256, 160, 60, 36, "FRQ", "F"},
+  {192, 200, 60, 36, "LCK", "X"},//07_sp7etd - new button for LOCK of frequency tuning 
+  {128, 200, 60, 36, "0v8", "Q"}//08_sp7etd - s-meter button used to display sp7etd firmware version
 };
 
 #define MAX_KEYS 17
@@ -144,7 +153,7 @@ int getValueByKnob(int minimum, int maximum, int step_size,  int initial, char* 
       }
       checkCAT();
     }
-    displayFillrect(30,53,280, 25, DISPLAY_NAVY);//04_sp7etd 41 into 53, 32 into 25 - cosmetic changes
+    displayFillrect(30,53,280, 25, DISPLAY_NAVY);//04_sp7etd 41@53, 32@25 - cosmetic changes
    return knob_value;
 }
 
@@ -271,14 +280,18 @@ void btnDraw(struct Button *b){
       (!strcmp(b->text, "SPL") && splitOn == 1))
     displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_BLACK, DISPLAY_ORANGE, DISPLAY_DARKGREY);   
   else if (!strcmp(b->text, "CW") && cwMode == 1)
-      displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_BLACK, DISPLAY_ORANGE, DISPLAY_DARKGREY);   
+      displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_BLACK, DISPLAY_ORANGE, DISPLAY_DARKGREY); 
+  else if (!strcmp(b->text, "LCK") && lck == 1)//07_sp7etd - new line
+      displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_BLACK, DISPLAY_ORANGE, DISPLAY_DARKGREY);//07_sp7etd - new line - changing color of button when pressed
+  else if (!strcmp(b->text, "0v8") && s_meter_on == 1) //08_sp7etd - new line
+      displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_BLACK, DISPLAY_ORANGE, DISPLAY_DARKGREY);//08_sp7etd - new line - changing color of button when pressed
   else
     displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_GREEN, DISPLAY_BLACK, DISPLAY_DARKGREY);
 }
 
 
 void displayRIT(){
-  displayFillrect(0,45,320,26, DISPLAY_NAVY);//04_sp7etd 41 into 45 testing, 30 into 26 - cosmetic changes
+  displayFillrect(0,45,320,26, DISPLAY_NAVY);//04_sp7etd 41@45 testing, 30@26 - cosmetic changes
   if (ritOn){
     strcpy(c, "TX:");
     formatFreq(ritTxFrequency, c+3);
@@ -405,7 +418,7 @@ void enterFreq(){
 }
 
 void drawCWStatus(){
-  displayFillrect(0, 201, 320, 39, DISPLAY_NAVY);
+  displayFillrect(0, 201, 126, 39, DISPLAY_NAVY);//07_sp7etd 320@126
   //strcpy(b, " cw:");//04_sp7etd - shortening CW status
 strcpy(b, " ");//04_sp7etd - shortening CW status
   int wpm = 1200/cwSpeed;    
@@ -420,6 +433,16 @@ strcpy(b, " ");//04_sp7etd - shortening CW status
   jogUpdate();//04_sp7etd - update jog/touch/firmware version info when CW status changed
 }
 
+void draw_s_meter()//08_sp7etd - drawing s-meter value
+{
+  int s_meter_value;
+  s_meter_value = s_meter_value_export();
+  strcpy(b, "");
+  itoa(s_meter_value,c, 10);
+  strcat(b, c);
+  displayFillrect(88, 210, 35 ,TEXT_LINE_HEIGHT+1, DISPLAY_NAVY);//08_sp7etd 230@210
+  displayRawText(b, 88, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);
+}
 
 void drawTx(){
   if (inTx)
@@ -439,8 +462,9 @@ int touch;//04_sp7etd declaration of local touch integer
 jog = jog_export(); //03_sp7etd - importing jog value from *.ino file
 touch = touch_export(); //04_sp7etd  importing touch value from *.ino file
 
-displayFillrect(230, 210, 110 ,TEXT_LINE_HEIGHT+1, DISPLAY_NAVY);
-displayRawText("04_sp7etd", 110, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);//04_sp7etd - displaying version and origin of updated firmware
+displayFillrect(269, 210, 110 ,TEXT_LINE_HEIGHT+1, DISPLAY_NAVY);//07_sp7etd 230@269
+
+//displayRawText("04_sp7etd", 110, 210, DISPLAY_LIGHTGREY, DISPLAY_NAVY);//04_sp7etd - displaying version and origin of updated firmware //07_sp7etd making space for LCK button and 
  
  //03_sp7etd - displays current jog position:
   switch (jog) {
@@ -746,6 +770,21 @@ void setCwTone(){
 //  updateDisplay();  
 }
 
+void lockTuning(struct Button *b){//07_sp7etd - service of LCK button (lock of frequency tuning)
+  if (lck==0) lck=1;
+  else lck=0;
+  btnDraw(b);//07_sp7etd
+}
+
+void s_meter_void (struct Button *b){//08_sp7etd - service of s-meter button
+  if (s_meter_on==0) s_meter_on=1;
+  else {
+    s_meter_on=0; 
+    displayFillrect(88, 210, 35 ,TEXT_LINE_HEIGHT+1, DISPLAY_NAVY);//disabling/clearing s-meter indication
+    }//08_sp7etd 230@210
+  btnDraw(b);//08_sp7etd
+}
+
 void doCommand(struct Button *b){
   
   if (!strcmp(b->text, "RIT"))
@@ -794,9 +833,14 @@ void doCommand(struct Button *b){
     setCwSpeed();
   else if (!strcmp(b->text, "TON"))
     setCwTone();
+  else if (!strcmp(b->text, "LCK"))//07_sp7etd - detection of LCK button press and call respective service function
+    lockTuning(b);//07_sp7etd
+  else if (!strcmp(b->text, "0v8"))//08_sp7etd - detection of s-meter button press and call respective service function
+    s_meter_void(b);//08_sp7etd
 }
 
-void  checkTouch(){
+
+void checkTouch(){
 
   if (!readTouch())
     return;

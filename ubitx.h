@@ -175,7 +175,13 @@ extern boolean modeCalibrate;//this mode of menus shows extended menus to calibr
 /* these are functions implemented in the main file named as ubitx_xxx.ino */
 int jog_export();//03_sp7etd - bridge between *.ino and ubitx_ui.cpp
 int touch_export();//04_sp7etd - bridge between *.ino and ubitx_ui.cpp
+int lck_export();//07_sp7etd
+int s_meter_value_export();//08_sp7etd - bridge between *.ino and ubitx_ui.cpp
+int s_meter_on_export();//08_sp7etd - bridge between *.ino and ubitx_ui.cpp
 void jogUpdate();//03_sp7etd - bridge between *.ino and ubitx_ui.cpp
+//void drawStatusbar();//08_sp7etd - bridge between *.ino and ubitx_ui.cpp
+void draw_s_meter();//08_sp7etd - bridge between *.ino and ubitx_ui.cpp
+
 void active_delay(int delay_by);
 void saveVFOs();
 void setFrequency(unsigned long f);
@@ -216,7 +222,7 @@ int enc_read(void);
 
 //main functions to check if any button is pressed and other user interface events
 void doCommands();  //does the commands with encoder to jump from button to button
-void  checkTouch(); //does the commands with a touch on the buttons
+void checkTouch(); //does the commands with a touch on the buttons
 
 
 /* these are functiosn implemented in ubitx_si5351.cpp */

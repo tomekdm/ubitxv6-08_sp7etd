@@ -1,24 +1,30 @@
-Please check my newest release 08_sp7etd.
+08_sp7etd firmware update manual:
 
-04_sp7etd firmware update manual:
-
+GENERAL NOTES:
 NOTE 1: Firmware originated from v6.3.1 Arduino sketch. For use with original ILI9341 320x240 TFT display.
+NOTE 2: Mind to rename unpacked directory eg. "ubitxv6-08_sp7etd-master" to the same name as *.ino file (eg. "ubitx_v6_1_code_08_sp7etd").
+NOTE 3: Remember to perform FULL calibration after flashing (especially when fresh nano used). Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also Touch screen calibration, as touch will not work if not calibrated. To enter Setup menu press encoder button until Setup menu will appear (~10s).
 
-NOTE 2: Mind to rename unpacked directory eg. "ubitxv6-04_sp7etd-master" to the same name as *.ino file (eg. "ubitx_v6_1_code_04_sp7etd")
+See 08_sp7etd_screenshot.jpeg file for menu overview.
 
-NOTE 3: MIND!!! Just found issue with CW mode when in USB - Rx is shifted +1kHz in relation to TX. No issue with LSB. Please switch to LSB when in CW mode above 10MHz. I will try to fix it in next revision. Check new release 06_sp7etd with this issue fixed.
+08_sp7etd release notes:
+Release NOTE 1: S-meter  and s-meter button added ("0v8"). 
+I have used LM386 circuit from:
+http://www.hamskey.com/2018/05/creating-simple-s-meter-sensor-for-ubitx.html
+Schematic included with this release files. S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8" button which name indicates sp7etd firmware release number. Mind s-meter indications are for reference only. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
 
-NOTE 4: Remember to perform FULL calibration after flashing (Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also Touch screen calibration, as touch will not work if not calibrated (especially when fresh nano used). To enter Setup menu press encoder button until Setup menu will appear (~10s).
+07_sp7etd release notes:
+Release NOTE 1: RX shift when in CW mode and when in USB is fixed now. Whenever in LSB or in USB in CW mode - RX now is on the same frequency as TX.
+Release NOTE 2: "LCK" button added - lock of frequency tuning with encoder to disable encoder tuning (to avoid accidental tuning).
 
-
-Introduction
-
-Hello,
-I have bought ubitx v6 couple weeks ago and at beginning I was a little disappointed with CW performance and some functionalities. Decided to adjust it to my needs with default ILI9341 320x240 TFT display and then I have discovered beauty of this open project.
-
+04_sp7etd release notes (first major sp7etd firmware release):
+Introduction:
+Hello, I have bought ubitx v6 some time ago and at beginning I was a little disappointed with CW performance and some functionalities. Decided to adjust it to my needs with default ILI9341 320x240 TFT display and then I have discovered beauty of this open project.
 I would like to take this opportunity to thank the creator of this project Ashhar Farhan VU2ESE, as well as all the people thanks to whom this wonderful project lives and becomes better.
-
-Today, when I am writing this text I am after couple days (during my May's holidays) with this rig. During this couple days I was able to make more than 50 QSOs (SSB, CW and some intercontinent DX - with 30W PA on 15m) while adjusting the firmware. Still some HW mods are planned to be made based on data from ubitx websites (AGC, CW audio filter, S-meter etc.).
+Today, when I am writing this text I am after couple weeks (mainly during my holidays) with this rig. During this time I was able to make a lot of QSO's.
+With ubitx v6 and with mini amplifier (based on IRF 530 mosfets, mini PA ~30-50W) I was participating IARU HR 2024 contest.
+From central Poland I made QSOs with Brasil, Argentina, Japan, USA, Puerto Rico, China, Oman and my first time with Hawaii.
+Still some HW mods are planned to be made based on data from ubitx websites (CW audio filter, S-meter etc.).
 
 These are some points summarizing my firmware mods:
 
@@ -34,7 +40,9 @@ By default jog position is set to 0.1 digit. Short press of the knob shifts jog 
 
 5.  Some cosmetic and SW stability changes e.g. to display pop ups - some pop up messages where shifted to improve cosmetics. Some stability issues found (original firmware was not working stable with my usb-c type arduino nano). Seems to be OK. now.
 
-So, now last line shows: Shortened CW status (wpm and tone frequency without units), version and origin of updated firmware, jog position and TFT touch status - presence of letter "t" indicates touch sensing ON (absence OFF). Please don't blame me for sp7etd sign. Feel free to enter Your or project creator call sign (ubitx_ui.cpp file, line 443).
+So, now last line shows: 
+- on the left: shortened CW status (wpm and tone frequency without units) and sp7etd revision number of firmware (eg. 12;700;07).
+- on the right: jog position and TFT touch status - presence of letter "t" indicates touch sensing ON - absence OFF (eg. .1t, .01t etc.)
 
 Summarizing, button knob has 5 functions now (depends on pressing time):
 
@@ -44,10 +52,12 @@ Summarizing, button knob has 5 functions now (depends on pressing time):
 4) Knob press between ~5s and 10s - toggle TFT touch sensing ON/OFF - sometimes SPI noise can be heard - so toggling touch OFF can help in RX.
 5) Long ~10s press until Setup window appear - as in origin firmware
 
-See 04_sp7etd_screenshot.jpeg file for menu overview.
-
 Best regards.
 
 Tomasz 
-sp7etd 
-4th May 2024, Poland
+sp7etd
+
+Hardware mods:
+1. RF Gain:
+Last time I have installed RF GAIN. I have decided to install 10k potentiometer in series with R12 100ohm resistor and it is working great. 
+Actually it should be little more than 10k (maybe 15k, 20k, 22k? - because 10k is not starting from "0" audibility), but for me it is enough to eliminate distortions from very strong stations.
