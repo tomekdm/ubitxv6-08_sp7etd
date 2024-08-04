@@ -17,7 +17,7 @@ Release NOTE 1:
 S-meter and s-meter button added (s-meter button name is "0v8" - the number of sp7etd firmware release). 
 I have used LM386 circuit from:
 http://www.hamskey.com/2018/05/creating-simple-s-meter-sensor-for-ubitx.html
-Schematic of s-meter circuit is included with this release. S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8". Mind s-meter indications are for reference only. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
+Schematic of s-meter circuit is included with this release. S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8". Mind s-meter indications are for reference only. S-meter scale: 1,2,3,4,5,7,9,10,20,30,40,50,60. "10" means 9+10dB etc. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
 
 So, now last line shows: 
 From the left: shortened CW status (wpm and tone frequency without units), s-meter indicator (grey color) if s-meter turned ON, two buttons: "0v8" as s-meter button, "LCK" as tuning LOCK button. On the right: jog position and TFT touch status - presence of letter "t" indicates touch sensing ON - absence OFF (eg. .1t, .01t etc.)
@@ -54,7 +54,7 @@ By default jog position is set to 0.1 digit. Short press of the knob shifts jog 
 
 3.  CW keying is modified. Discovered that start of CW TX is delayed and cutting out e.g. first dot in "R" letter (.-.) - first dot was not transmitted. Some mods were made and CW TX seems to be OK. now. Couple CW QSOs made with straight key.
 
-4.  Additionally discovered that CW TX frequency was shifted by sidetone +/- depending if USB or LSB was selected. This shift was commented out and CW TX occurs now on displayed/selected frequency.
+4.  Additionally discovered that CW TX frequency was shifted by sidetone +/- depending if USB or LSB was selected. This shift was commented out and CW TX occurs now on displayed/selected frequency (07_sp7etd: as later found in 04_sp7etd release still was issue with CW USB; since 07_sp7etd this is also fixed).
 
 5.  Some cosmetic and SW stability changes e.g. to display pop ups - some pop up messages where shifted to improve cosmetics. Some stability issues found (original firmware was not working stable with my usb-c type arduino nano). Seems to be OK. now.
 
