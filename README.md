@@ -34,7 +34,7 @@ Release NOTE 2:
 
 "LCK" button added - lock of frequency tuning to disable encoder (to avoid accidental tuning).
 
-04_sp7etd release notes (first major sp7etd firmware release):
+04_sp7etd release notes (first major sp7etd firmware release for ubitx v6):
 
 Introduction:
 
