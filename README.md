@@ -19,6 +19,10 @@ I have used LM386 circuit from:
 http://www.hamskey.com/2018/05/creating-simple-s-meter-sensor-for-ubitx.html
 Schematic of s-meter circuit is included with this release. S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8". Mind s-meter indications are for reference only. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
 
+So, now last line shows: 
+From the left: shortened CW status (wpm and tone frequency without units), s-meter indicator (grey color) if s-meter turned ON, two buttons: "0v8" as s-meter button, "LCK" as tuning LOCK button. On the right: jog position and TFT touch status - presence of letter "t" indicates touch sensing ON - absence OFF (eg. .1t, .01t etc.)
+
+
 07_sp7etd release notes:
 
 Release NOTE 1: 
@@ -53,10 +57,6 @@ By default jog position is set to 0.1 digit. Short press of the knob shifts jog 
 4.  Additionally discovered that CW TX frequency was shifted by sidetone +/- depending if USB or LSB was selected. This shift was commented out and CW TX occurs now on displayed/selected frequency.
 
 5.  Some cosmetic and SW stability changes e.g. to display pop ups - some pop up messages where shifted to improve cosmetics. Some stability issues found (original firmware was not working stable with my usb-c type arduino nano). Seems to be OK. now.
-
-So, now last line shows: 
-- on the left: shortened CW status (wpm and tone frequency without units) and sp7etd revision number of firmware (eg. 12;700;07).
-- on the right: jog position and TFT touch status - presence of letter "t" indicates touch sensing ON - absence OFF (eg. .1t, .01t etc.)
 
 Summarizing, button knob has 5 functions now (depends on pressing time):
 
