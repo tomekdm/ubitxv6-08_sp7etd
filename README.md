@@ -22,9 +22,11 @@ Schematic of s-meter circuit is included with this release. S-meter is turned OF
 07_sp7etd release notes:
 
 Release NOTE 1: 
+
 RX shift when in CW mode and when in USB is fixed now. Whenever in LSB or in USB in CW mode - RX now is on the same frequency as TX.
 
 Release NOTE 2: 
+
 "LCK" button added - lock of frequency tuning to disable encoder (to avoid accidental tuning).
 
 04_sp7etd release notes (first major sp7etd firmware release):
