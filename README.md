@@ -17,7 +17,7 @@ Release NOTE 1:
 S-meter and s-meter button added (s-meter button name is "0v8" - the number of sp7etd firmware release). 
 I have used LM386 circuit from:
 http://www.hamskey.com/2018/05/creating-simple-s-meter-sensor-for-ubitx.html
-Schematic of s-meter circuit is included with this release. S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8". Mind s-meter indications are for reference only. S-meter scale: 1,2,3,4,5,7,9,10,20,30,40,50,60. "10" means 9+10dB etc. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
+Schematic of s-meter circuit is included with this release (with use of 10uF capacitor). S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8". Mind s-meter indications are for reference only. S-meter scale: 1,2,3,4,5,7,9,10,20,30,40,50,60. "10" means 9+10dB etc. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
 
 So, now last line shows: 
 From the left: shortened CW status (wpm and tone frequency without units), s-meter indicator (grey color) if s-meter turned ON, two buttons: "0v8" as s-meter button, "LCK" as tuning LOCK button. On the right: jog position and TFT touch status - presence of letter "t" indicates touch sensing ON - absence OFF (eg. .1t, .01t etc.)
