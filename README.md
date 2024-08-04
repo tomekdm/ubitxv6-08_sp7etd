@@ -38,7 +38,7 @@ I would like to take this opportunity to thank the creator of this project Ashha
 Today, when I am writing this text I am after couple weeks (mainly during my holidays) with this rig. During this time I was able to make a lot of QSO's.
 With ubitx v6 and with mini amplifier (based on IRF 530 mosfets, mini PA ~30-50W) I was participating IARU HR 2024 contest.
 From central Poland I made QSOs with Brasil, Argentina, Japan, USA, Puerto Rico, China, Oman and my first time with Hawaii.
-Still some HW mods are planned to be made based on data from ubitx websites (CW audio filter, S-meter etc.).
+Still some HW mods are planned to be made based on data from ubitx websites (especially Hi-Per-Mite type CW audio filter).
 
 These are some points summarizing my firmware mods:
 
