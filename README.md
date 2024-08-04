@@ -8,7 +8,7 @@ NOTE 2: Mind to rename unpacked directory eg. "ubitxv6-08_sp7etd-master" to the 
 
 NOTE 3: Remember to perform FULL calibration after flashing (especially when new nano used). Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also perform Touch screen calibration, as touch will not work if not calibrated. To enter Setup menu press encoder button until Setup menu will appear (~10s).
 
-See 08_sp7etd_screenshot.jpeg file for menu overview.
+
 
 08_sp7etd release notes:
 
@@ -22,6 +22,7 @@ Schematic of s-meter circuit is included with this release. S-meter is turned OF
 So, now last line shows: 
 From the left: shortened CW status (wpm and tone frequency without units), s-meter indicator (grey color) if s-meter turned ON, two buttons: "0v8" as s-meter button, "LCK" as tuning LOCK button. On the right: jog position and TFT touch status - presence of letter "t" indicates touch sensing ON - absence OFF (eg. .1t, .01t etc.)
 
+See 08_sp7etd_screenshot.jpeg file for menu overview.
 
 07_sp7etd release notes:
 
