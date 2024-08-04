@@ -1,8 +1,11 @@
 08_sp7etd firmware update manual:
 
 GENERAL NOTES:
+
 NOTE 1: Firmware originated from v6.3.1 Arduino sketch. For use with original ILI9341 320x240 TFT display.
+
 NOTE 2: Mind to rename unpacked directory eg. "ubitxv6-08_sp7etd-master" to the same name as *.ino file (eg. "ubitx_v6_1_code_08_sp7etd").
+
 NOTE 3: Remember to perform FULL calibration after flashing (especially when fresh nano used). Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also Touch screen calibration, as touch will not work if not calibrated. To enter Setup menu press encoder button until Setup menu will appear (~10s).
 
 See 08_sp7etd_screenshot.jpeg file for menu overview.
