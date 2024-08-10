@@ -8,6 +8,8 @@ NOTE 2: Mind to rename unpacked directory eg. "ubitxv6-08_sp7etd-master" to the 
 
 NOTE 3: Remember to perform FULL calibration after flashing (especially when new nano used). Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also perform Touch screen calibration, as touch will not work if not calibrated. To enter Setup menu press encoder button until Setup menu will appear (~10s).
 
+NOTE 4: After switching from LSB to USB - and vice versa - remember to perform a tune. Even small frequency step is required to switch transceiver into selected modulation.
+
 
 
 08_sp7etd release notes:
