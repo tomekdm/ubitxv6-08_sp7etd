@@ -30,7 +30,7 @@ See 08_sp7etd_screenshot.jpeg file for menu overview.
 
 Release NOTE 1: 
 
-RX shift when in CW mode and when in USB is fixed now. Whenever in LSB or in USB in CW mode - RX now is on the same frequency as TX.
+RX shift when in CW mode and when in USB is fixed now. Whenever in LSB or in USB in CW mode - RX is now on the same frequency as TX.
 
 Release NOTE 2: 
 
