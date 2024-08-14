@@ -43,7 +43,7 @@ Introduction:
 Hello, I have bought ubitx v6 some time ago and at beginning I was a little disappointed with CW performance and some functionalities. Decided to adjust it to my needs with default ILI9341 320x240 TFT display and then I have discovered beauty of this open project.
 I would like to take this opportunity to thank the creator of this project Ashhar Farhan VU2ESE, as well as all the people thanks to whom this wonderful project lives and becomes better.
 Today, when I am writing this text I am after couple weeks (mainly during my holidays) with this rig. During this time I was able to make a lot of QSO's.
-With ubitx v6 and with mini amplifier (based on IRF 530 mosfets, mini PA ~30-50W) I was participating IARU HR 2024 contest.
+With ubitx v6 and with mini amplifier (based on IRF 530 mosfets, mini PA ~30-50W) I was participating IARU HF 2024 contest.
 From central Poland I made QSOs with Brasil, Argentina, Japan, USA, Puerto Rico, China, Oman and my first time with Hawaii.
 Still some HW mods are planned to be made based on data from ubitx websites (especially Hi-Per-Mite type CW audio filter).
 
