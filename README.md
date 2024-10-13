@@ -1,4 +1,4 @@
-08_sp7etd firmware update manual:
+"08_sp7etd firmware update manual"
 
 GENERAL NOTES:
 
