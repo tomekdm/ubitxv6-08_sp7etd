@@ -11,6 +11,7 @@ NOTE 3: Remember to perform FULL calibration after flashing (especially when new
 NOTE 4: After switching from LSB to USB - and vice versa - remember to perform a tune. Even small frequency step is required to switch transceiver into selected modulation (09_sp7etd firmware is already prepared with fix of this issue - for immediate USB/LSB mode change - ready for download in release section, but mind it is not tested in the air yet - bench tests shows correct operation of 09_sp7etd firmware).
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 04_sp7etd release notes (first major sp7etd firmware release for ubitx v6):
 
 Introduction:
@@ -45,6 +46,7 @@ Summarizing, button knob has 5 functions now (depends on pressing time):
 5) Long ~10s press until Setup window appear - as in origin firmware
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 07_sp7etd release notes:
 
 Release NOTE 1: 
@@ -56,6 +58,7 @@ Release NOTE 2:
 "LCK" button added - lock of frequency tuning to disable encoder (to avoid accidental tuning).
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 08_sp7etd release notes:
 
 Release NOTE 1: 
