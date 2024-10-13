@@ -10,32 +10,7 @@ NOTE 3: Remember to perform FULL calibration after flashing (especially when new
 
 NOTE 4: After switching from LSB to USB - and vice versa - remember to perform a tune. Even small frequency step is required to switch transceiver into selected modulation (09_sp7etd firmware is already prepared with fix of this issue - for immediate USB/LSB mode change - ready for download in release section, but mind it is not tested in the air yet - bench tests shows correct operation of 09_sp7etd firmware).
 
-
-
-08_sp7etd release notes:
-
-Release NOTE 1: 
-
-S-meter and s-meter button added (s-meter button name is "0v8" - the number of sp7etd firmware release). 
-I have used LM386 circuit from:
-http://www.hamskey.com/2018/05/creating-simple-s-meter-sensor-for-ubitx.html
-Schematic of s-meter circuit is included with this release (with use of 10uF capacitor). S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8". Mind s-meter indications are for reference only. S-meter scale: 1,2,3,4,5,7,9,10,20,30,40,50,60. "10" means 9+10dB etc. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
-
-So, now last line shows: 
-From the left: shortened CW status (wpm and tone frequency without units), s-meter indicator (grey color) if s-meter turned ON, two buttons: "0v8" as s-meter button, "LCK" as tuning LOCK button. On the right: jog position and TFT touch status - presence of letter "t" indicates touch sensing ON - absence OFF (eg. .1t, .01t etc.)
-
-See 08_sp7etd_screenshot.jpeg file for menu overview.
-
-07_sp7etd release notes:
-
-Release NOTE 1: 
-
-RX shift when in CW mode and when in USB is fixed now. Whenever in LSB or in USB in CW mode - RX is now on the same frequency as TX.
-
-Release NOTE 2: 
-
-"LCK" button added - lock of frequency tuning to disable encoder (to avoid accidental tuning).
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 04_sp7etd release notes (first major sp7etd firmware release for ubitx v6):
 
 Introduction:
@@ -69,11 +44,38 @@ Summarizing, button knob has 5 functions now (depends on pressing time):
 4) Knob press between ~5s and 10s - toggle TFT touch sensing ON/OFF - sometimes SPI noise can be heard - so toggling touch OFF can help in RX.
 5) Long ~10s press until Setup window appear - as in origin firmware
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+07_sp7etd release notes:
+
+Release NOTE 1: 
+
+RX shift when in CW mode and when in USB is fixed now. Whenever in LSB or in USB in CW mode - RX is now on the same frequency as TX.
+
+Release NOTE 2: 
+
+"LCK" button added - lock of frequency tuning to disable encoder (to avoid accidental tuning).
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+08_sp7etd release notes:
+
+Release NOTE 1: 
+
+S-meter and s-meter button added (s-meter button name is "0v8" - the number of sp7etd firmware release). 
+I have used LM386 circuit from:
+http://www.hamskey.com/2018/05/creating-simple-s-meter-sensor-for-ubitx.html
+Schematic of s-meter circuit is included with this release (with use of 10uF capacitor). S-meter is turned OFF by default, because S-meter 300ms sampling may cause some noise on small signals. Turn s-meter ON by pressing "0v8". Mind s-meter indications are for reference only. S-meter scale: 1,2,3,4,5,7,9,10,20,30,40,50,60. "10" means 9+10dB etc. Due to hardware limitations of this solution - s-meter values slightly depends on volume level - especially at lower signals.
+
+So, now last line shows: 
+From the left: shortened CW status (wpm and tone frequency without units), s-meter indicator (grey color) if s-meter turned ON, two buttons: "0v8" as s-meter button, "LCK" as tuning LOCK button. On the right: jog position and TFT touch status - presence of letter "t" indicates touch sensing ON - absence OFF (eg. .1t, .01t etc.)
+
+See 08_sp7etd_screenshot.jpeg file for menu overview.
+
 Best regards.
 
 Tomasz 
 sp7etd
 
+PS.:
 Hardware mods:
 1. RF Gain:
    Last time I have installed RF GAIN. I have decided to install 10k potentiometer in series with R12 100ohm resistor and it is working great. Schematic of this implementation can be found with 08_sp7etd release files. Actually it should be little more than 10k (maybe 15k, 20k, 22k? - because 10k is not starting from "0" audibility), but for me it is enough to eliminate distortions from very strong stations.
