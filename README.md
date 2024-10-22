@@ -1,13 +1,18 @@
 "09_sp7etd firmware update manual"
 
 GENERAL NOTES:
+
 NOTE 1: Firmware originated from v6.3.1 Arduino sketch. For use with original ILI9341 320x240 TFT display.
+
 NOTE 2: Flashing ubitx is very easy - find tutorials in the net. To be on the safe side You can buy new arduino nano without gold-pins soldered and solder them on the same side as usb connector.
+
 NOTE 3: Mind to rename unpacked directory eg. "ubitxv6-09_sp7etd-master" to the same name as *.ino file (eg. "ubitx_v6_1_code_09_sp7etd").
+
 NOTE 4: Remember to perform FULL calibration after flashing (especially when fresh nano used). Set Freq (eg. 182000), Set BFO (eg. 11056.5) and also Touch screen calibration, as touch will not work if not calibrated. To enter Setup menu press encoder button until Setup menu will appear (~10s).
+
 NOTE 5: Firmware prepared to use with original ubitx v6 without hardware mods or with minimal hardware mods. My hardware mods includes: short of R3 2k2 resistor for CW straight key operation, S-meter (LM386 circuit from: http://www.hamskey.com/2018/05/creating-simple-s-meter-sensor-for-ubitx.html with use of 10uF capacitor), RF gain and rotary encoder clicktop/detents removal (https://ubitx.net/2018/03/04/remove-detents-from-your-encoder/). You can read about them in this text or search the web, but these mods are not needed (not necessary) to use with this firmware.
 
-See 08_sp7etd_screenshot.jpeg file for menu overview.
+See 09_sp7etd_screenshot.jpeg file for menu overview.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
