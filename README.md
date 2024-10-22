@@ -71,9 +71,13 @@ See 08_sp7etd_screenshot.jpeg file for menu overview.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 09_sp7etd release notes:
+
 a) immediate change of USB/LSB mode after SSB mode select (no need to tune).
+
 b) Some small optimization and simplification of sp7etd code. Example: use of "extern int" instead of "int export()" for some implemented earlier integers (still learning :). 
+
 c) s-meter button renamed from "0v8" to "0v9".
+
 
 Best regards.
 
