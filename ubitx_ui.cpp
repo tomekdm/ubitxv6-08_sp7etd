@@ -12,13 +12,6 @@
  * quickly cleared up.
  */
 
-
-int lck = 0; //07_sp7etd - new variable for lock of frequency tuning
-int lck_export() {return lck;}//07_sp7etd
-
-int s_meter_on = 0;//08_sp7etd - by default s-meter is OFF
-int s_meter_on_export() {return s_meter_on;}//08_sp7etd - exporting s-meter button position
-
 #define BUTTON_SELECTED 1
 
 struct Button {
@@ -51,7 +44,7 @@ const struct Button btn_set[MAX_BUTTONS] PROGMEM = {
   {192, 160, 60, 36, "TON", "T"},
   {256, 160, 60, 36, "FRQ", "F"},
   {192, 200, 60, 36, "LCK", "X"},//07_sp7etd - new button for LOCK of frequency tuning 
-  {128, 200, 60, 36, "0v8", "Q"}//08_sp7etd - s-meter button used to display sp7etd firmware version
+  {128, 200, 60, 36, "0v9", "Q"}//08_sp7etd - s-meter button used to display sp7etd firmware version,09_sp7etd update @09_sp7etd
 };
 
 #define MAX_KEYS 17
@@ -283,7 +276,7 @@ void btnDraw(struct Button *b){
       displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_BLACK, DISPLAY_ORANGE, DISPLAY_DARKGREY); 
   else if (!strcmp(b->text, "LCK") && lck == 1)//07_sp7etd - new line
       displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_BLACK, DISPLAY_ORANGE, DISPLAY_DARKGREY);//07_sp7etd - new line - changing color of button when pressed
-  else if (!strcmp(b->text, "0v8") && s_meter_on == 1) //08_sp7etd - new line
+  else if (!strcmp(b->text, "0v9") && s_meter_on == 1) //08_sp7etd - new line @09_sp7etd
       displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_BLACK, DISPLAY_ORANGE, DISPLAY_DARKGREY);//08_sp7etd - new line - changing color of button when pressed
   else
     displayText(b->text, b->x, b->y, b->w, b->h, DISPLAY_GREEN, DISPLAY_BLACK, DISPLAY_DARKGREY);
@@ -435,8 +428,6 @@ strcpy(b, " ");//04_sp7etd - shortening CW status
 
 void draw_s_meter()//08_sp7etd - drawing s-meter value
 {
-  int s_meter_value;
-  s_meter_value = s_meter_value_export();
   strcpy(b, "");
   itoa(s_meter_value,c, 10);
   strcat(b, c);
@@ -457,10 +448,6 @@ void drawStatusbar(){
 
 void jogUpdate()//03_sp7etd jogUpdate display function
 {
-int jog;//03_sp7etd  - declaration of local jog integer
-int touch;//04_sp7etd declaration of local touch integer
-jog = jog_export(); //03_sp7etd - importing jog value from *.ino file
-touch = touch_export(); //04_sp7etd  importing touch value from *.ino file
 
 displayFillrect(269, 210, 110 ,TEXT_LINE_HEIGHT+1, DISPLAY_NAVY);//07_sp7etd 230@269
 
@@ -664,7 +651,7 @@ void sidebandToggle(struct Button *b){
     isUSB = 0;
   else
     isUSB = 1;
-
+  change_ssb=1;//09_sp7etd
   struct Button e;
   getButton("USB", &e);
   btnDraw(&e);
@@ -835,7 +822,7 @@ void doCommand(struct Button *b){
     setCwTone();
   else if (!strcmp(b->text, "LCK"))//07_sp7etd - detection of LCK button press and call respective service function
     lockTuning(b);//07_sp7etd
-  else if (!strcmp(b->text, "0v8"))//08_sp7etd - detection of s-meter button press and call respective service function
+  else if (!strcmp(b->text, "0v9"))//08_sp7etd - detection of s-meter button press and call respective service function @09_sp7etd
     s_meter_void(b);//08_sp7etd
 }
 

@@ -142,7 +142,7 @@ extern unsigned long firstIF;
 
 // if cwMode is flipped on, the rx frequency is tuned down by sidetone hz instead of being zerobeat
 extern int cwMode;
-
+extern int change_ssb;//09_sp7etd - still learning - found extern :)
 
 //these are variables that control the keyer behaviour
 extern int cwSpeed; //this is actuall the dot period in milliseconds
@@ -173,11 +173,11 @@ extern boolean modeCalibrate;//this mode of menus shows extended menus to calibr
                               //beat frequency
 
 /* these are functions implemented in the main file named as ubitx_xxx.ino */
-int jog_export();//03_sp7etd - bridge between *.ino and ubitx_ui.cpp
-int touch_export();//04_sp7etd - bridge between *.ino and ubitx_ui.cpp
-int lck_export();//07_sp7etd
-int s_meter_value_export();//08_sp7etd - bridge between *.ino and ubitx_ui.cpp
-int s_meter_on_export();//08_sp7etd - bridge between *.ino and ubitx_ui.cpp
+extern int jog;//09_sp7etd
+extern int touch;//09_sp7etd
+extern int lck;//09_sp7etd
+extern int s_meter_value;
+extern int s_meter_on;//09_sp7etd
 void jogUpdate();//03_sp7etd - bridge between *.ino and ubitx_ui.cpp
 //void drawStatusbar();//08_sp7etd - bridge between *.ino and ubitx_ui.cpp
 void draw_s_meter();//08_sp7etd - bridge between *.ino and ubitx_ui.cpp
