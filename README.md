@@ -79,6 +79,7 @@ b) Some small optimization and simplification of sp7etd code. Example: use of "e
 c) s-meter button renamed from "0v8" to "0v9".
 
 
+
 Best regards.
 
 Tomasz sp7etd
